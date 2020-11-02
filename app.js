@@ -1,6 +1,32 @@
 //the function have to return an array of numbers, between the min and max, and with a size of n
 //numbers cannot be repeated
 
+
+
+// function to generate the random number
 var randomPick = (n, min, max) => {
-    ...
+    
+    //initialize variables
+    var array = [];
+    var arrayLength = n;
+    var range = max - min + 1;
+    var i= 0;
+
+    
+
+    //will be generating random numbers until the array is completed
+    while (i < arrayLength) {
+        var randomNumber = Math.floor(Math.random() * range) + min;
+
+        
+            array.push(randomNumber);
+            i++;
+        
+    }
+
+    return array; 
   }
+
+  console.log(randomPick(6, 1, 49)); // Apuesta automática de la primitiva
+  console.log(randomPick(15, 1, 15)); // Escoge combinación de bolas de billar
+  console.log(randomPick(1, 1, 6)); // Tirada aleatoria de un dado
