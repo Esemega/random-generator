@@ -1,6 +1,10 @@
 //the function have to return an array of numbers, between the min and max, and with a size of n
 //numbers cannot be repeated
 
+//function to verify that arguments are valids
+var areValidArguments = (n,min,max) => {
+    return !isNaN(n) && !isNaN(min) && !isNaN(max) && (max - min + 1 >= n );
+}
 
 //function to check if a number is already in the array
 var isRepeated = (array, target) => {
@@ -12,7 +16,9 @@ var isRepeated = (array, target) => {
 
 // function to generate the random number
 var randomPick = (n, min, max) => {
-    
+    //to avoid infinites loops we verify that arguments are valids
+    if (!areValidArguments(n,min,max)) return "Los argumentos no son validos.";
+
     //initialize variables
     var array = [];
     var arrayLength = n;
