@@ -2,6 +2,13 @@
 //numbers cannot be repeated
 
 
+//function to check if a number is already in the array
+var isRepeated = (array, target) => {
+    for (item of array) {
+        if (item === target) return true;
+    }
+    return false;
+}
 
 // function to generate the random number
 var randomPick = (n, min, max) => {
@@ -18,10 +25,11 @@ var randomPick = (n, min, max) => {
     while (i < arrayLength) {
         var randomNumber = Math.floor(Math.random() * range) + min;
 
-        
+        // if the number is not repeated include in the array
+        if (!isRepeated(array, randomNumber)) {
             array.push(randomNumber);
             i++;
-        
+        }
     }
 
     return array; 
